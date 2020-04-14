@@ -67,4 +67,12 @@ Rails.application.configure do
   # and use secure cookies.
   config.force_ssl = true
   
+  config.action_mailer.raise_delivery_errors = false
+  
+  host = 'https://64f32b324d1a4fcf80aa09c584cc806d.vfs.cloud9.us-east-2.amazonaws.com/' 
+  # Don't use this literally; use your local dev host instead 
+  # Use this on the cloud IDE.
+  config.action_mailer.default_url_options = { host: host, protocol: 'https' } # Use this if developing on localhost.
+  # config.action_mailer.default_url_options = { host: host, protocol: 'http' }
+  
 end
