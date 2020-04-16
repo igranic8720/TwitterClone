@@ -60,7 +60,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "hello_app_production"
 
-  config.action_mailer.perform_caching = false
+  #config.action_mailer.perform_caching = false
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   host = 'ivantwitter.herokuapp.com'
@@ -69,8 +69,8 @@ Rails.application.configure do
     :address        => 'smtp.sendgrid.net',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => "ivan.granic.ig@gmail.com",
-    :password       => "Volume217",
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }
