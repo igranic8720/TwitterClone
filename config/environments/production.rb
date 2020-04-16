@@ -74,6 +74,9 @@ Rails.application.configure do
     :domain         => 'heroku.com',
     :enable_starttls_auto => true
   }
+  
+  # Store uploaded files on Amazon AWS.
+  config.active_storage.service = :amazon
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
