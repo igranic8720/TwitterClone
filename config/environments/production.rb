@@ -66,13 +66,14 @@ Rails.application.configure do
   host = 'ivantwitter.herokuapp.com'
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.default :charset => "utf-8"
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.sendgrid.net',
+    :address        => 'smtp.mailgun.org',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => ENV['SENDGRID_USERNAME'],
-    :password       => ENV['SENDGRID_PASSWORD'],
-    :domain         => 'ivantwitter.herokuapp.com',
+    :user_name      => ENV['MAILGUN_SMTP_USERNAME'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => 'sandbox3ce06d281b364d3480f7d65b27f404fc.mailgun.org',
     :enable_starttls_auto => true
   }
   
